@@ -17,16 +17,16 @@ const options = {
     minuteIncrement: 1,
     onClose(selectedDates) {
         // console.log(selectedDates[0]);
-        const selectedDate =  selectedDates[0].getTime()
-        const currentTime = options.defaultDate.getTime()
+        const selectedDate =  selectedDates[0].getTime();
+        const currentTime = options.defaultDate.getTime();
 
-        remainderTime = selectedDate - currentTime
-        // console.log(remainderTime)
+        remainderTime = selectedDate - currentTime;
+        // console.log(remainderTime);
 
         if(remainderTime < 0) {
-            alert("Please choose a date in the future")
+            alert("Please choose a date in the future");
             } else {
-                startBtn.removeAttribute('disabled')
+                startBtn.removeAttribute('disabled');
                    }
     },
 };
@@ -82,12 +82,12 @@ function timerUpdete({days, hours, minutes, seconds}) {
     refs.dataSeconds.textContent = pad(seconds);
 }
 
-function stopTimer(time, delay) {   
-        clearInterval(timerId);
+function stopTimer(time, delay) {        
         refs.dataDays.textContent = '00';
         refs.dataHours.textContent = '00';
         refs.dataMinutes.textContent = '00';
-        refs.dataSeconds.textContent = '00';    
+        refs.dataSeconds.textContent = '00'; 
+        clearInterval(timerId);   
 }
 
 function pad(value) {
