@@ -76,10 +76,10 @@ function convertMs(ms) {
 
 
 function timerUpdete({days, hours, minutes, seconds}) {
-    refs.dataDays.textContent = pad(days);
-    refs.dataHours.textContent = pad(hours);
-    refs.dataMinutes.textContent = pad(minutes);
-    refs.dataSeconds.textContent = pad(seconds);
+    refs.dataDays.textContent = addLeadingZero(days);
+    refs.dataHours.textContent = addLeadingZero(hours);
+    refs.dataMinutes.textContent = addLeadingZero(minutes);
+    refs.dataSeconds.textContent = addLeadingZero(seconds);
 }
 
 function stopTimer(time, delay) {        
@@ -90,6 +90,6 @@ function stopTimer(time, delay) {
         clearInterval(timerId);   
 }
 
-function pad(value) {
+function addLeadingZero(value) {
     return String(value).padStart(2,'0');
 }
