@@ -73,8 +73,7 @@ function convertMs(ms) {
     const seconds = Math.floor((((ms % day) % hour) % minute) / second);
   
     return { days, hours, minutes, seconds };
-  }
-
+}
 
 function timerUpdete({days, hours, minutes, seconds}) {
     refs.dataDays.textContent = addLeadingZero(days);
